@@ -3,7 +3,7 @@
 Here's a visual guide on how to transfer your Facebook Leads to Google Sheets in realtime, with the use of Google Apps Script, without using Facebook Javascript SDK.
 
 ### Reason for doing so
-To be quick, there are actually lots of paid or free integration services out there which you can directly use. Free service does have its limitations. Since I am now having my year-end holiday, so it is totally not a big deal for me to spend some time doing the manual confiugration.
+To be quick, there are actually lots of paid or free integration services out there which you can directly use. Free service does have its limitations. Since I am now having my year-end holiday, so it is totally not a big deal for me to spend some time doing the manual configuration.
 
 ### Quick introduction
 We will be using Google Apps Script to write our integration script, well it does have its [quotas](https://script.google.com/dashboard/quota) as well but they are very high which would definitely meet most people's needs. The overall flow goes like this:
