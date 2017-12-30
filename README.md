@@ -33,10 +33,13 @@ Head over to your Facebook page settings page > "Publishing Tools" > "Forms Libr
 ![step4](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/4%20-%20create%20lead%20ads.png)
 ![step5](https://raw.githubusercontent.com/simmatrix/facebook-leads-google-sheets-integration/master/images/5%20-%20create%20lead%20ads.png)
 ![step6](https://raw.githubusercontent.com/simmatrix/facebook-leads-google-sheets-integration/master/images/6%20-%20create%20lead%20ads.png)
+
 After the step below, just click on the "Finish" button
 ![step7](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/7%20-%20create%20lead%20ads.png)
+
 Here's your newly created Lead Ads! You may click on the "Preview" link to view your lead ads.
 ![step8](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/8%20-%20create%20lead%20ads.png)
+
 Here's the lead ads which I have created.
 ![step9](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/9%20-%20create%20lead%20ads.png)
 
@@ -56,28 +59,39 @@ Key in the security check and you are all set with a new Facebook app!
 #### Step 4: Create a Facebook Webhook
 Mouse over to the "Webhooks" selection and click on the "Set Up" button
 ![step14](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/14%20-%20add%20webhook.png)
+
 You will be directed to this page. Now keep this browser tab open. We need to head over to Google Apps Script first.
 ![step15](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/15%20-%20add%20webhook.png)
+
 In your Google Drive, create a new Google Apps Script
 ![step16](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/16%20-%20setup%20webhook.png)
+
 This is for Facebook to verify the existence of our webhook. Copy these lines of code into your script panel. You can put any random string as the `hub.verify_token`.
 > You can copy the code  [here](https://github.com/simmatrix/facebook-leads-google-sheets-integration/blob/master/scripts/Code.gs) but please only copy the doGet() section first and NOT the whole script!
 
 ![step17](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/17%20-%20setup%20webhook.png)
+
 Then you need to deploy your script to make it live.
 ![step18](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/18%20-%20deploy%20webhook.png)
+
 Make sure you are executing your script as `Me (<your_email_address>)` and give `Anyone, even anonymous` the access to your app. And the Project version should be `New`.
 ![step19](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/19%20-%20deploy%20webhook.png)
+
 After you have made it live, copy your web app URL. 
 ![step20](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/20%20-%20deploy%20webhook.png)
+
 You may now head back to your Facebook Developers App page.
 ![step21](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/21%20-%20register%20webhook.png)
+
 Make sure to change the `User` option to `Page` from the drop down list
 ![step22](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/22%20-%20register%20webhook.png)
+
 Key in the web app URL that you copied from your Google Apps script just now into the Callback URL field, and key in the same verify_token that you have keyed into your Google Apps script. Click `Verify and Save` to finish this off.
 ![step23](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/23%20-%20register%20webhook.png)
+
 You will now see a list of items below
 ![step24](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/24%20-%20make%20subscription.png)
+
 Search for the item `leadgen` and hit on the "Subscribe" button
 ![step25](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/25%20-%20make%20subscription.png)
 ![step26](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/26%20-%20make%20subscription.png)
@@ -104,13 +118,17 @@ So right now I would take you for a ride of how to obtain a long-lived `page acc
 #### 1. Get Short-lived User Access Token
 On a fresh page of your Graph API Explorer...
 ![step28](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/28%20-%20get%20short-lived%20user%20access%20token.png)
+
 Make sure you have selected the correct Facebook app at the top-right drop-down list, for mine, it is `LeadAds GoogleSheets Integration`. After this, from the "Get Token" drop-down list, click on `Get User Access Token`
 ![step29](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/29%20-%20get%20short-lived%20user%20access%20token.png)
+
 Tick on the `manage_pages` checkbox
 ![step30](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/30%20-%20get%20short-lived%20user%20access%20token.png)
+
 Proceed as prompted
 ![step31](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/31%20-%20get%20short-lived%20user%20access%20token.png)
 ![step32](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/32%20-%20get%20short-lived%20user%20access%20token.png)
+
 Copy the string as shown in the Access Token field. This is your short-lived `user access token`.
 ![step33](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/33%20-%20get%20short-lived%20user%20access%20token.png)
 
@@ -143,6 +161,7 @@ Optionally, if you're curious to know whether this `page access token` expires o
 #### Step 6: Subscribe your Facebook page to your Facebook webhook
 To link together both of your Facebook page and webhook, you would need to make a `POST` request with the endpoint `<YOUR_FACEBOOK_PAGE_ID>/subscribed_apps`. Make sure that it is `POST`, and make sure that you have keyed in your `page access token` to the Access Token field, then hit Submit.
 ![step41](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/41%20-%20make%20your%20page%20subscribe%20to%20the%20webhook.png)
+
 Now you can make a `GET` request with the same endpoint as above to view the list of subscribed apps.
 ![step42](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/42%20-%20view%20subscribed%20webhook.png)
 
