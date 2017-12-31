@@ -1,6 +1,6 @@
 ![Transfer Facebook Leads to Google Sheets with Google Apps Script](https://raw.githubusercontent.com/simmatrix/facebook-leads-google-sheets-integration/master/images/0%20-%20intro.png)
 
-Here's a visual guide on how to transfer your Facebook Leads to Google Sheets in realtime, with the use of Google Apps Script, without using Facebook Javascript SDK.
+Here's a visual guide on how to transfer your Facebook Leads to Google Sheets in realtime, with the use of Google Apps Script, without using Facebook Javascript SDK. Refer to the [bottom section](https://github.com/simmatrix/facebook-leads-google-sheets-integration#additional) for the way to do it in non-realtime (pull in bulk) as well.
 
 ### Reason for doing so
 To be quick, there are actually lots of paid or free integration services out there which you can directly use. Free service does have its limitations. Since I am now having my year-end holiday, so it is totally not a big deal for me to spend some time doing the manual configuration.
@@ -230,6 +230,10 @@ You can now head over to [Facebook Lead Ads Testing Tool](https://developers.fac
 ### TADAA... THE END!
 ![step61](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/61%20-%20check%20test%20lead.png)
 
+### Additional
+So for the above we deal with pulling of Facebook Leads in real-time. How if you just implement it half-way when your campaigns are running? You definitely need to pull all of the other previous leads into your Google Sheets as well right... You can refer to this [alternative script](https://github.com/simmatrix/facebook-leads-google-sheets-integration/blob/master/scripts/CodeAdditional.gs) of which can be called by `<YOUR_GOOGLE_SCRIPTS_WEB_APP_URL>?pull_all_leads=true`. Kindly refer to the `doGet()` function. It handles the pagination as well (as Facebook returns 25 leads per call)
+
+In this additional script, I have also sorted the data in the order which I have wanted before inserting it into Google Sheets because I realized that for some of my previous leads, sometimes "email" comes first, sometimes "full_name" comes first, so without ordering them in proper format, it would be a mess in Google Sheets later.
 
 ### Feedback
 Should you have any feedback, feel free to send your enquiries via simmatrix100[at]gmail[dot]com.
