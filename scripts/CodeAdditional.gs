@@ -11,7 +11,7 @@ function doGet(request)
     var active_sheet = spreadsheet.getSheetByName("Sheet1");
 
     var long_lived_page_access_token = 'INSERT_YOUR_LONG_LIVED_PAGE_ACCESS_TOKEN';
-    var lead_form_id = '514700508903465';
+    var lead_form_id = 'INSERT_YOUR_LEAD_FORM_ID';
 
     var lead_data_endpoint = 'https://graph.facebook.com/' + lead_form_id + '/leads?access_token=' + long_lived_page_access_token;
     var lead_data_response = UrlFetchApp.fetch( lead_data_endpoint, {'method': 'get'} );
