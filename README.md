@@ -242,5 +242,11 @@ In this additional script, I have also sorted the data in the order which I have
 
 Sometimes you may have multiple lead forms created for a single Facebook page, if so, you may refer to this [alternative script](https://github.com/simmatrix/facebook-leads-google-sheets-integration/blob/master/scripts/CodeMultipleFormsSheets.gs)
 
+### Additional (Sending Leads to your Email)
+
+If you would like to have the leads be sent to your mailbox instead, you can refer to this [alternative script](https://github.com/simmatrix/facebook-leads-google-sheets-integration/blob/master/scripts/CodeEmailSending.gs)
+
+![sendemail](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/send-email.png)
+
 ### Feedback
 Should you have any feedback, feel free to send your enquiries via simmatrix100[at]gmail[dot]com.
