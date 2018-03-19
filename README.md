@@ -244,7 +244,7 @@ Sometimes you may have multiple lead forms created for a single Facebook page, i
 
 ### Additional (Sending Leads to your Email)
 
-If you would like to have the leads be sent to your mailbox instead, you can refer to this [alternative script](https://github.com/simmatrix/facebook-leads-google-sheets-integration/blob/master/scripts/CodeEmailSending.gs)
+If you would like to have the leads be sent to your mailbox instead, you can refer to this [alternative script](https://github.com/simmatrix/facebook-leads-google-sheets-integration/blob/master/scripts/CodeEmailSending.gs). Do remember to replace `"<YOUR_EMAIL_ADDRESS>"` with your own email address.
 
 ![sendemail](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/send-email.png)
 

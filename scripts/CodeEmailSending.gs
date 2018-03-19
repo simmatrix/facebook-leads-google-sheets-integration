@@ -57,7 +57,7 @@ function doPost(request)
     }
     
     // Send an email
-    GmailApp.sendEmail("simmatrix100@gmail.com", "You have a new Facebook Lead", plain_body, {
+    GmailApp.sendEmail("<YOUR_EMAIL_ADDRESS>", "You have a new Facebook Lead", plain_body, {
       htmlBody: html_body,
       name: 'Facebook Lead Notifier',
       noReply: true,
