@@ -106,7 +106,29 @@ Search for the item `leadgen` and hit on the "Subscribe" button
 ![step25](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/25%20-%20make%20subscription.png)
 ![step26](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/26%20-%20make%20subscription.png)
 
-#### Step 5: Get a Facebook page access token
+#### Step 5: [NEW - DUE TO FACEBOOK RECENT TIGHTEN SECURITY] Request for "manage_pages" permission and set your FB app to live after approval
+
+While waiting for the approval from Facebook, which usually takes quite a while, you may go through the subsequent steps below, with your Facebook app still under development mode, but you won't get a final working version without having the approval from Facebook and without having your FB app goes to `live` mode.
+
+But let's continue on with requesting for permission from Facebook. First, under your Facebook Developer page for your app, go to the `App Review` page, and click on the `Start a Submission` button.
+
+![newfacebookchange1](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/new-fb-change-1.png)
+
+Search for the `manage_pages` permission and tick on the checkbox, then click `Add 1 Item` to exit this dialog box.
+
+![newfacebookchange2](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/new-fb-change-2.png)
+
+After this, click on the `detail` link and fill in the details in the subsequent pop-up dialog box.
+
+![newfacebookchange3](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/new-fb-change-3.png)
+
+Note: I'm still waiting for someone to reply to my question on [Facebook Developer Group](https://www.facebook.com/groups/fbdevelopers/permalink/1934516866591818/). Will elaborate more on how to fill in the details after I have gotten a reply from some good folks over there.
+
+So basically after submitted for app review, you would need to wait till Facebook approves your Facebook app. The next step to do after approval is to set your Facebook app to `live` mode.
+
+> Side Note: For the submission of Facebook chatbot, it took me a shocking 2 months, but no worries, I submitted around May 2018, which was the time when Facebook had just re-enabled back their app submission after deactivating it for a while due to the Cambridge Analytica data breach legal case, and requires all existing apps to re-submit to retain their existing permissions. Probably due to the huge influx of requests that Facebook had some delay on their end during that period of time.
+
+#### Step 6: Get a Facebook page access token
 
 > For this section, you would need to head over to [Facebook Graph API Explorer](https://developers.facebook.com/tools/explorer)
 
@@ -184,7 +206,7 @@ Key in `me/accounts` to the text field beside the Submit button, and make sure y
 Optionally, if you're curious to know whether this `page access token` expires or not, you may head on to [Facebook Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken) and give it a check! The result is `Never` expires.
 ![step40](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/40%20-%20double%20confirm%20expiry%20date%20of%20page%20access%20token.png)
 
-#### Step 6: Subscribe your Facebook page to your Facebook webhook
+#### Step 7: Subscribe your Facebook page to your Facebook webhook
 
 To link together both of your Facebook page and webhook, you would need to make a `POST` request with the endpoint `<YOUR_FACEBOOK_PAGE_ID>/subscribed_apps`. Make sure that it is `POST`, and make sure that you have keyed in your `page access token` to the Access Token field, then hit Submit.
 ![step41](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/41%20-%20make%20your%20page%20subscribe%20to%20the%20webhook.png)
@@ -199,28 +221,6 @@ You should then be getting the following result:
 
 Now you can make a `GET` request with the same endpoint as above to view the list of subscribed apps.
 ![step42](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/42%20-%20view%20subscribed%20webhook.png)
-
-#### Step 7: [NEW - DUE TO FACEBOOK RECENT TIGHTEN SECURITY] Request for "manage_pages" permission and set your FB app to live after approval
-
-While waiting for the approval from Facebook, which usually takes quite a while, you may go through Step 8, but you can proceed with Step 9 as it wont' work without having the permission and without having your FB app goes to `live` mode.
-
-But let's continue on with requesting for permission from Facebook. First, under your Facebook Developer page for your app, go to the `App Review` page, and click on the `Start a Submission` button.
-
-![newfacebookchange1](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/new-fb-change-1.png)
-
-Search for the `manage_pages` permission and tick on the checkbox, then click `Add 1 Item` to exit this dialog box.
-
-![newfacebookchange2](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/new-fb-change-2.png)
-
-After this, click on the `detail` link and fill in the details in the subsequent pop-up dialog box.
-
-![newfacebookchange3](https://github.com/simmatrix/facebook-leads-google-sheets-integration/raw/master/images/new-fb-change-3.png)
-
-Note: I'm still waiting for someone to reply to my question on [Facebook Developer Group](https://www.facebook.com/groups/fbdevelopers/permalink/1934516866591818/). Will elaborate more on how to fill in the details after I have gotten a reply from some good folks over there.
-
-So basically after submitted for app review, you would need to wait till Facebook approves your Facebook app. The next step to do after approval is to set your Facebook app to `live` mode.
-
-> Side Note: For the submission of Facebook chatbot, it took me a shocking 2 months, but no worries, I submitted around May 2018, which was the time when Facebook had just re-enabled back their app submission after deactivating it for a while due to the Cambridge Analytica data breach legal case, and requires all existing apps to re-submit to retain their existing permissions. Probably due to the huge influx of requests that Facebook had some delay on their end during that period of time.
 
 #### Step 8: Update your webhook script to receive and store your lead data in Google Sheets
 
